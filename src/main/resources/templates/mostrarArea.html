@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<header>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <link href="../static/css/catalogo.css" rel="stylesheet">
+</header>
+
+<body>
+    <div class="container">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 text-center">
+            <h1>Parque Natural</h1>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <button class="btn btn-primary"><a href="especies.html">Especies</a></button>
+                <button class="btn btn-primary"><a href="areas.html">Areas</a></button>
+                <button class="btn btn-primary"><a href="personal.html">Personal</a></button>
+            </div>
+            <h1>Areas</h1>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <p th:each="area : ${areas}">
+                    <span th:text="'Nombre: '+ ${area.nombre}"></span>
+                    <br/>
+                    <span th:text="'Extension: '+ ${area.extension}"></span>
+                    <br/>
+                    <a th:href="@{/editarArea(numArea=${areaStat.index})}">Editar</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

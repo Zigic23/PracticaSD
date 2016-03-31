@@ -1,0 +1,21 @@
+.btn {
+    border-top-color: #148ad9;
+    background: #148ad9;
+    color: white;
+}
+
+.btn:hover {
+    border-top-color: #28597a;
+    background: #28597a;
+    color: #fafafa;
+}
+
+.btn:active {
+    border-top-color: #148ad9;
+    background: #148ad9;
+}
+
+.btn a {
+    color: white;
+    text-decoration: none;
+}

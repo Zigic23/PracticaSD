@@ -17,7 +17,5 @@ public class Area {
 	
 	private int extension;
 	
-	@ManyToMany
-	private List<Animal> animales;
 	
 }
