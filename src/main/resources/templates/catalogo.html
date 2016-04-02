@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <header>
-    <link href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type = "text/css" rel="stylesheet" th:href="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css}">
     <meta charset="UTF-8" />
-    <link href = "../static/css/catalogo.css" rel="stylesheet">
+    <link type = "text/css" href="../static/css/catalogo.css" th:href="@{/css/catalogo.css}" rel="stylesheet">
 </header>
 <body>
     <div class = "container">

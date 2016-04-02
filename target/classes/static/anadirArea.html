@@ -15,18 +15,14 @@
                 <button class="btn btn-primary"><a href="personal.html">Personal</a></button>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-               <h1>Añadir Especie</h1>
-                <form role = "form" class = "form-inline" action="/addEspecie" method=post>
-                    <input type="text" class = "form-control" placeholder="Nombre Comun" name="nComun">
-                    <input type="text" class = "form-control" placeholder="Nombre Cientifico" name="nCient">
-                    <input type="text" class = "form-control" placeholder="Tipo" name="tipo">
-                    <input type="text" class = "form-control" placeholder="Areas, separa por comas" name="areas">
-
-                    <input type="submit" value="Añadir">
+                <h1>Añadir Area</h1>
+                <form role="form" class="form-inline" action="/aceptarArea" method=post>
+                    <input class = "form-control" type = "text" placeholder = "Nombre">
+                    <input class = "form-control" type = "text" placeholder = "Extension">
+                    <input class = "btn btn-primary" type = "submit" value = "Añadir">
                 </form>
             </div>
         </div>
     </div>
-</body>
-
+    </body>
 </html>
