@@ -1,4 +1,4 @@
-package es.sd.PracticaSD;
+package es.sd.PracticaSD.Models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,23 +13,23 @@ import javax.persistence.ManyToMany;
 public class Area {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long areaid;
-	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long idArea;
+
 	private String nombre;
 	private String extension;
-	@ManyToMany(mappedBy="areas")
+	@ManyToMany(mappedBy = "areas")
 	private List<Especie> especies = new ArrayList<Especie>();
-	
-	public Area(){
-		
+
+	public Area() {
+
 	}
-	
-	public Area (String nombre, String extension){
+
+	public Area(String nombre, String extension) {
 		this.nombre = nombre;
 		this.extension = extension;
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -45,17 +45,17 @@ public class Area {
 	public void setEspecies(List<Especie> especies) {
 		this.especies = especies;
 	}
-	
-	public void setExtension(String extension){
-		this.extension=extension;
+
+	public void setExtension(String extension) {
+		this.extension = extension;
 	}
-	
-	public String getExtension(){
+
+	public String getExtension() {
 		return this.extension;
 	}
-	
-	public long getId(){
-		return this.areaid;
+
+	public long getId() {
+		return this.idArea;
 	}
-	
+
 }

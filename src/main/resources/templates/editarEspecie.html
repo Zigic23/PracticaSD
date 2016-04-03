@@ -2,7 +2,7 @@
 <header>
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type = "text/css" rel="stylesheet" th:href="@{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css}">
     <meta charset="UTF-8" />
-    <link type = "text/css" href="../static/css/catalogo.css" th:href="@{/css/catalogo.css}" rel="stylesheet">
+    <link type = "text/css" href="../static/css/catalogo.css" th:href="@{/css/catalogo.css}" rel="stylesheet"/>
 </header>
 
 <body>
@@ -10,17 +10,21 @@
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 text-center">
             <h1>Parque Natural</h1>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <button class="btn btn-primary"><a href="especies.html">Especies</a></button>
-                <button class="btn btn-primary"><a href="areas.html">Areas</a></button>
-                <button class="btn btn-primary"><a href="personal.html">Personal</a></button>
+                <button class="btn btn-primary"><a href="/especies.html">Especies</a></button>
+                <button class="btn btn-primary"><a href="/area.html">Areas</a></button>
+                <button class="btn btn-primary"><a href="/personal.html">Personal</a></button>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                <h1>Añadir Especie</h1>
-                <form role = "form" class = "form-inline" action="/aceptarEditarEspecie/{idEspecie}(idEspecie=${especie.getId()})" method=post>
+                <form role = "form" class = "form-inline" th:action="@{/aceptarEditarEspecie/{idEspecie}(idEspecie=${especie.getId()})}" method=post>
                     <input type="text" class = "form-control" placeholder="Nombre Comun" name="nComun" th:value = "${especie.nComun}">
                     <input type="text" class = "form-control" placeholder="Nombre Cientifico" name="nCient" th:value = "${especie.nCient}">
-                    <input type="text" class = "form-control" placeholder="Tipo" name="tipo" th:value = "${especie.tipo}">
-                    <input type="text" class = "form-control" placeholder="Areas" name="areas" th:value = "${especie.areas.toString()}">
+                    <select class="form-control" name = "tipo">
+                        <option class = "active" value="Animal">Animal</option>
+                        <option value="Vegetal">Vegetal</option>
+                        <option value="Hongo">Hongo</option>
+                    </select>
+                    <input type="text" class = "form-control" placeholder="Areas" name="areas">
 
                     <input type="submit" value="Añadir">
                 </form>

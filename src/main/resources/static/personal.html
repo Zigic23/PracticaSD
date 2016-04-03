@@ -2,7 +2,7 @@
 <header>
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <meta charset="UTF-8" />
-    <link href="../static/css/catalogo.css" rel="stylesheet">
+    <link type = "text/css" href="/css/catalogo.css" rel="stylesheet">
 </header>
 
 <body>
@@ -10,20 +10,20 @@
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 text-center">
             <h1>Parque Natural</h1>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <button class="btn btn-primary"><a href="especies.html">Especies</a></button>
-                <button class="btn btn-primary"><a href="areas.html">Areas</a></button>
-                <button class="btn btn-primary"><a href="personal.html">Personal</a></button>
+                <button class="btn btn-primary"><a href="/especies.html">Especies</a></button>
+                <button class="btn btn-primary"><a href="/area.html">Areas</a></button>
+                <button class="btn btn-primary"><a href="/personal.html">Personal</a></button>
             </div>
             <h1>Personal</h1>
             <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
                 <br/>
                 <form role="form" class="form-inline" action="/buscarEmpleado">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="obABuscar" placeholder="Escriba aqui">
+                        <input type="text" class="form-control" name="obABuscar" placeholder="Escriba aqui">
                     </div>
                     <div class="form-group">
                         <label for="busc">Buscar por: </label>
-                        <select class="form-control" id="buscarPor">
+                        <select class="form-control" name="buscarPor" id = "busc">
                             <option value="Apellidos" class="active">Apellidos</option>
                             <option value="Tipo">Tipo</option>
                             <option value="NyA">Nombre y Apellidos</option>
@@ -34,7 +34,7 @@
             </div>
             <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                 <br/>
-                <button class="btn btn-primary"><a href="anadirPersonal.html">Añadir Personal</a></button>
+                <button class="btn btn-primary"><a href="/anadirPersonal.html">Añadir Personal</a></button>
             </div>
         </div>
     </div>

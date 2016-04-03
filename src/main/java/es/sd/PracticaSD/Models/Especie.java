@@ -1,4 +1,4 @@
-package es.sd.PracticaSD;
+package es.sd.PracticaSD.Models;
 
 import java.util.List;
 
@@ -12,26 +12,26 @@ import javax.persistence.ManyToMany;
 public class Especie {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long especieid;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long idEspecie;
 
 	private String nComun;
 	private String nCient;
 	private String tipo;
 	@ManyToMany
 	private List<Area> areas;
-	
-	public Especie () {
-		
+
+	public Especie() {
+
 	}
-	
-	public Especie (String nComun, String nCient, String tipo, List <Area> areas){
+
+	public Especie(String nComun, String nCient, String tipo, List<Area> areas) {
 		this.nComun = nComun;
 		this.nCient = nCient;
 		this.tipo = tipo;
 		this.areas = areas;
 	}
-	
+
 	public String getTipo() {
 		return tipo;
 	}
@@ -64,8 +64,8 @@ public class Especie {
 		this.areas = areas;
 	}
 
-	public long getId(){
-		return this.especieid;
+	public long getId() {
+		return this.idEspecie;
 	}
-	
+
 }
