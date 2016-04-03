@@ -21,7 +21,7 @@
                     <br/>
                     <span th:text="'Extension: '+ ${area.extension}"></span>
                     <br/>
-                    <a th:href="@{/editarArea(numArea=${areaStat.index})}">Editar</a>
+                    <a th:href="@{/editarArea/{numArea}(numArea=${area.getId()})}">Editar</a>
                 </p>
             </div>
         </div>

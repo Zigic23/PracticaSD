@@ -20,7 +20,12 @@
                     <input type="text" class = "form-control" placeholder="Nombre Comun" name="nComun">
                     <input type="text" class = "form-control" placeholder="Nombre Cientifico" name="nCient">
                     <input type="text" class = "form-control" placeholder="Tipo" name="tipo">
-                    <input type="text" class = "form-control" placeholder="Areas, separa por comas" name="areas">
+                    <select class="form-control" name = "tipo">
+                        <option class = "active" value="Animal">Animal</option>
+                        <option value="Vegetal">Vegetal</option>
+                        <option value="Hongo">Hongo</option>
+                    </select>
+                    <input type="text" class = "form-control" placeholder="Areas, separa por comas sin espacios" name="areas">
 
                     <input type="submit" value="Añadir">
                 </form>

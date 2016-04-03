@@ -16,11 +16,11 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                <h1>Añadir Especie</h1>
-                <form role = "form" class = "form-inline" action="/aceptarEspecie" method=post>
+                <form role = "form" class = "form-inline" action="/aceptarEditarEspecie/{idEspecie}(idEspecie=${especie.getId()})" method=post>
                     <input type="text" class = "form-control" placeholder="Nombre Comun" name="nComun" th:value = "${especie.nComun}">
                     <input type="text" class = "form-control" placeholder="Nombre Cientifico" name="nCient" th:value = "${especie.nCient}">
                     <input type="text" class = "form-control" placeholder="Tipo" name="tipo" th:value = "${especie.tipo}">
-                    <input type="text" class = "form-control" placeholder="Areas" name="areas" th:value = "${especie.areas}">
+                    <input type="text" class = "form-control" placeholder="Areas" name="areas" th:value = "${especie.areas.toString()}">
 
                     <input type="submit" value="Añadir">
                 </form>

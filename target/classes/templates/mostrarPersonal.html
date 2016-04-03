@@ -27,7 +27,7 @@
                     <span th:text="'Correo: ' + ${empleado.correo}"></span>
                     <span th:text="'Telefono fijo: ' + ${empleado.fijo}"></span>
                     <span th:text="'Telefono movil: ' + ${empleado.movil}"></span>
-                    <a th:href="@{/editarEmpleado(numEmpleado=${empleadoStat.index})}">Editar</a>
+                    <a th:href="@{/editarEmpleado/{numEmpleado}(numEmpleado=${empleado.getId()})}">Editar</a>
                     </span>
                 </p>
                 <p th:if="buscarPor === 'Apellidos'" th:each="empleado : ${empleados}">
@@ -41,7 +41,7 @@
                     <span th:text="'Correo: ' + ${empleado.correo}"></span>
                     <span th:text="'Telefono fijo: ' + ${empleado.fijo}"></span>
                     <span th:text="'Telefono movil: ' + ${empleado.movil}"></span>
-                    <a th:href="@{/editarEmpleado(numEmpleado=${empleadoStat.index})}">Editar</a>
+                    <a th:href="@{/editarEmpleado/{numEmpleado}(numEmpleado=${empleado.getId()})}">Editar</a>
                     </span>
                 </p>
                 <p th:if="buscarPor === 'NyA'" th:each="empleado : ${empleados}">
@@ -55,7 +55,7 @@
                     <span th:text="'Correo: ' + ${empleado.correo}"></span>
                     <span th:text="'Telefono fijo: ' + ${empleado.fijo}"></span>
                     <span th:text="'Telefono movil: ' + ${empleado.movil}"></span>
-                    <a th:href="@{/editarEmpleado(numEmpleado=${empleadoStat.index})}">Editar</a>
+                    <a th:href="@{/editarEmpleado/{numEmpleado}(numEmpleado=${empleado.getId()})}">Editar</a>
                     </span>
                 </p>
             </div>

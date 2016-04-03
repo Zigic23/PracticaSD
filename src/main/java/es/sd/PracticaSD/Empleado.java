@@ -15,15 +15,15 @@ public class Empleado {
 	private String nombre;
 	private String apellidos;
 	private String correo;
-	private String movil;
-	private String fijo;
+	private int movil;
+	private int fijo;
 	private String tipo;
 	
 	public Empleado(){
 		
 	}
 	
-	public Empleado(String nom, String ape, String correo,String movil,String fijo, String tipo){
+	public Empleado(String nom, String ape, String correo,int movil,int fijo, String tipo){
 		this.nombre=nom;
 		this.apellidos=ape;
 		this.correo=correo;
@@ -50,16 +50,16 @@ public class Empleado {
 	public String getCorreo(){
 		return this.correo;
 	}
-	public void setMovil(String movil){
+	public void setMovil(int movil){
 		this.movil=movil;
 	}
-	public String getMovil(){
+	public int getMovil(){
 		return this.movil;
 	}
-	public void setTFijo(String fijo){
+	public void setTFijo(int fijo){
 		this.fijo=fijo;
 	}
-	public String getFijo(){
+	public int getFijo(){
 		return this.fijo;
 	}
 	public void setTipo(String tipo){

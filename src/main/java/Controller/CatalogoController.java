@@ -17,7 +17,7 @@ public class CatalogoController {
 	@RequestMapping(value = "/")
 	public String catalogo(Model model){
 		
-		return "catalogo";
+		return "index";
 	}
 	
 }

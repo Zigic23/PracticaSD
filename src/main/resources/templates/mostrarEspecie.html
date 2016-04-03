@@ -24,9 +24,9 @@
                     <span th:text="'Tipo: ' + ${especie.tipo}"></span>
                     <br/>
                     <span th:each="area : ${especie.area}">
-                        <span th:text="'Nombre Area: ' + ${area.nombre}"></span>
+                        <span th:text="'Nombre Area: ' + ${area.nombre}">, </span>
                     </span>
-                    <a th:href="@{/editarEspecie(numEspecie=${especieStat.index})}">Editar</a>
+                    <a th:href="@{/editarEspecie/{numEspecie}(numEspecie=${especie.getId()})}">Editar</a>
                 </p>
                 <p th:if="buscarPor === 'Tipo'" th:each="especie : ${especies}">
                     <span th:if="obABuscar == ${especie.tipo}">
@@ -39,7 +39,7 @@
                     <span th:each="area : ${especie.area}">
                             <span th:text="'Nombre Area: ' + ${area.nombre}"></span>
                     </span>
-                    <a th:href="@{/editarEspecie(numEspecie=${especieStat.index})}">Editar</a>
+                    <a th:href="@{/editarEspecie/{numEspecie}(numEspecie=${especie.getId()})}">Editar</a>
                     </span>
                 </p>
                 <p th:if="buscarPor === 'nComun'" th:each="especie : ${especies}">
@@ -53,7 +53,7 @@
                     <span th:each="area : ${especie.area}">
                             <span th:text="'Nombre Area: ' + ${area.nombre}"></span>
                     </span>
-                    <a th:href="@{/editarEspecie(numEspecie=${especieStat.index})}">Editar</a>
+                    <a th:href="@{/editarEspecie/{numEspecie}(numEspecie=${especie.getId()})}">Editar</a>
                     </span>
                 </p>
             </div>
