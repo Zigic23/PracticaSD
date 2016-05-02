@@ -1,0 +1,15 @@
+.img-responsive.img-center{
+    margin: 0;
+}
+
+.newImage{
+    margin: 1;
+}
+
+body{
+    background-color:darkseagreen;
+}
+
+.page-header{
+    font-weight: 900;
+}

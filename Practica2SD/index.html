@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.2.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="credencialesFlickr.js"></script>
+    <script src="app.js"></script>
+    <link href="./photos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+                <h1 class="page-header">Buscador de fotos de flickr</h1>
+                <form class="form-inline" id="form">
+                    <label for="name">Nombre usuario: </label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Escriba aqui el username">
+                    <label for="aBuscar" class="aBuscar">A buscar: </label>
+                    <input type="text" class="form-control aBuscar" name="aBuscar" id="aBuscar" placeholder="Formato fecha: mm-dd-aaaa">
+                    <select class="form-control" id="type">
+                        <option value="min_taken_date" class="selected">Fecha minima de captura</option>
+                        <option value="max_taken_date">Fecha maxima de captura</option>
+                        <option value="username">Nombre de usuario</option>
+                        <option value="min_upload_date">Fecha minima de subida</option>
+                        <option value="max_upload_date">Fecha maxima de subida</option>
+                        <option value="tags">Tags</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </form>
+            </div>
+        </div>
+        <div class="window row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+                <img src="" class="window img-responsive img-rounded img-center"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+                <h2>Imagenes:</h2>
+                <div id="imagenes"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
