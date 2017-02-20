@@ -1,0 +1,35 @@
+##### holiii fasdvf qgwher s
+**goasdf**
+## __fhasdufih__ **fjdijsgodfg**
+el texto en negrita se
+formatea con dos
+**asteriscos** o __guiones 
+bajos__
+---
+***
+___
+> el texto en cursiva se
+formatea con un *asterisco*
+o _guiones bajos_
+
+~~~
+ajsdfiojqw
+asjdfiojaoijehfsdu
+asduifhaiusdvhxzhvxhiubxhv
+~~~
+[Esto es un enlace](http://hola.com)
+
+anidar **pene _en italica_ en negrita**
+anidar __ algo *en italica* y negrita__
+anidar * todo __en negrita__ e italica*
+lo anido _ todo **en algo** u lo otro_
+
+- hola1    
+- hola2
+- hola3
+- hola 4
+
+- hola solo
+- pene
+
+ostia **puta**
