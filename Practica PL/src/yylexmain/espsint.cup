@@ -1,0 +1,22 @@
+package yylexmain;
+import java_cup.runtime.*;
+terminal ident, constint, constfloat, constlit, coment, menos, mas, mul, div, rest, para, parc, puntc, coma, igual, voidd, intt, floatt, llava, llavc, returnn;
+non terminal PROGRAM, PART, TYPE, RESTPART, LISTPARAM, BLQ, SENTLIST, SENT, LID, EXP, LEXP, OP, FACTOR;
+
+/* Precedences */
+precedence left mul, div, rest, mas, menos;
+
+PROGRAM::= PART PROGRAM | PART;
+PART::= TYPE RESTPART;
+RESTPART::= ident para LISTPARAM parc BLQ;
+BLQ::= llava SENTLIST llavc;
+LISTPARAM::= LISTPARAM coma TYPE ident | TYPE ident;
+TYPE::= voidd | intt | floatt;
+
+SENTLIST::= SENTLIST SENT | SENT;
+SENT::= TYPE LID puntc | ident igual EXP puntc | ident para LEXP parc puntc | returnn EXP puntc;
+LID::= ident | LID coma ident;
+LEXP::= EXP | LEXP coma EXP;
+EXP::= EXP OP EXP | FACTOR;
+OP::= mas | menos | mul | div | rest;
+FACTOR::= ident para LEXP parc | para EXP parc | ident | constint | constfloat | constlit;

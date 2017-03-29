@@ -6,12 +6,12 @@ sueno_contigo
 0+5462
 -432
 0x+4FFF
-0-123471576954325
+0-123471576 954325
 0x+0.FFF
 0-34.5762
 -1234.65473890
 'ashdfiuqwo aisdhfiojañ$/(51/($"&%$·"!/%) hgsdio'
-
+1234 + 5436 - 143 * 54326 / 54326 % 5456
 'ashdfiuqwo aisdhfiojañ$/(51/($"&%$·"!/%) hgsdio'
 'ashdfiuqwo aisdhfiojañ$/(51\'hola\'/($"&%$·"!/%) hgsdio'
 'ashdfiuqwo aisdhfiojañ$/(51/($"&%$·"!/%) hgsdio'
@@ -24,3 +24,6 @@ asudlignareuiea
 ashd uofhasdui hasidhf ashdf ohasduifhasdifh sfadh uasdhfiuqw e
 rh124uh5iu2h43tourhiaosfhdf+iqha +sd+fdas
 sadfa fasdfjsaiojfsaioj d* sadihfiuahui hrqwiuehrfkashduofhuashdo hf*ihasdfadf****** ofdhsauh oqiwhr*/
+0983
+++255
+/comentario

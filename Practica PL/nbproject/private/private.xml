@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group name="JavaGroup">
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/Practica%20PL/src/yylexmain/AnalizadorLexico.java</file>
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/Practica%20PL/src/yylexmain/Yytoken.java</file>
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/Practica%20PL/src/yylexmain/YylexMain.java</file>
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/Practica%20PL/src/yylexmain/Practica%20obligatoria.flex</file>
+        </group>
+        <group name="EAS group">
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/Practica%20PL/src/yylexmain/parser.java</file>
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/Practica%20PL/src/yylexmain/Yytoken.java</file>
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/Practica%20PL/src/yylexmain/sym.java</file>
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/Practica%20PL/src/yylexmain/AnalizadorLexico.java</file>
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/Practica%20PL/src/yylexmain/YylexMain.java</file>
+        </group>
+        <group name="EAS Group">
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/Practica%20PL/src/yylexmain/Practica%20obligatoria.flex</file>
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/Practica%20PL/src/yylexmain/AnalizadorLexico.java</file>
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/Practica%20PL/src/yylexmain/Yytoken.java</file>
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/Practica%20PL/src/yylexmain/YylexMain.java</file>
+        </group>
+    </open-files>
+</project-private>
