@@ -251,6 +251,11 @@ class AnalizadorLexico implements java_cup.runtime.Scanner {
   private int zzFinalHighSurrogate = 0;
 
   /* user code: */
+	AnalizadorLexico(java.io.Reader in, boolean deb) {
+		this.zzReader = in;
+		this.debug = deb;
+	}
+	boolean debug = false;
 	boolean getEndOfFile(){
 		return zzAtEOF;
 	}
@@ -579,7 +584,8 @@ class AnalizadorLexico implements java_cup.runtime.Scanner {
       if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
         zzAtEOF = true;
             zzDoEOF();
-          { return new java_cup.runtime.Symbol(sym.EOF); }
+          {   return new Symbol(sym.EOF);
+ }
       }
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
@@ -588,7 +594,8 @@ class AnalizadorLexico implements java_cup.runtime.Scanner {
             }
           case 20: break;
           case 2: 
-            { return new Symbol(sym.constint, yytext());
+            { if (debug){System.out.println("constint");}
+		return new Symbol(sym.constint, yytext());
             }
           case 21: break;
           case 3: 
@@ -596,67 +603,83 @@ class AnalizadorLexico implements java_cup.runtime.Scanner {
             }
           case 22: break;
           case 4: 
-            { return new Symbol(sym.para);
+            { if (debug){System.out.println("para");}
+		return new Symbol(sym.para);
             }
           case 23: break;
           case 5: 
-            { return new Symbol(sym.parc);
+            { if (debug){System.out.println("parc");}
+		return new Symbol(sym.parc);
             }
           case 24: break;
           case 6: 
-            { return new Symbol(sym.puntc);
+            { if (debug){System.out.println("puntc");}
+		return new Symbol(sym.puntc);
             }
           case 25: break;
           case 7: 
-            { return new Symbol(sym.coma);
+            { if (debug){System.out.println("coma");}
+		return new Symbol(sym.coma);
             }
           case 26: break;
           case 8: 
-            { return new Symbol(sym.igual);
+            { if (debug){System.out.println("igual");}
+		return new Symbol(sym.igual);
             }
           case 27: break;
           case 9: 
-            { return new Symbol(sym.llava);
+            { if (debug){System.out.println("llava");}
+		return new Symbol(sym.llava);
             }
           case 28: break;
           case 10: 
-            { return new Symbol(sym.llavc);
+            { if (debug){System.out.println("llavc");}
+		return new Symbol(sym.llavc);
             }
           case 29: break;
           case 11: 
-            { return new Symbol(sym.ident, yytext());
+            { if(debug){System.out.println("ident");}
+		return new Symbol(sym.ident, yytext());
             }
           case 30: break;
           case 12: 
-            { return new Symbol(sym.constfloat, yytext());
+            { if (debug){System.out.println("constfloat");}
+		return new Symbol(sym.constfloat, yytext());
             }
           case 31: break;
           case 13: 
-            { return new Symbol(sym.constlit, yytext());
+            { if (debug){System.out.println("constlit");}
+		return new Symbol(sym.constlit, yytext());
             }
           case 32: break;
           case 14: 
-            { return new Symbol(sym.coment);
+            { if (debug){System.out.println("coment");}
+		return new Symbol(sym.coment);
             }
           case 33: break;
           case 15: 
-            { return new Symbol(sym.div);
+            { if (debug){System.out.println("div");}
+		return new Symbol(sym.div);
             }
           case 34: break;
           case 16: 
-            { return new Symbol(sym.mul);
+            { if (debug){System.out.println("mul");}
+		return new Symbol(sym.mul);
             }
           case 35: break;
           case 17: 
-            { return new Symbol(sym.menos);
+            { if (debug){System.out.println("menos");}
+		return new Symbol(sym.menos);
             }
           case 36: break;
           case 18: 
-            { return new Symbol(sym.mas);
+            { if (debug){System.out.println("mas");}
+		return new Symbol(sym.mas);
             }
           case 37: break;
           case 19: 
-            { return new Symbol(sym.rest);
+            { if (debug){System.out.println("rest");}
+		return new Symbol(sym.rest);
             }
           case 38: break;
           default:

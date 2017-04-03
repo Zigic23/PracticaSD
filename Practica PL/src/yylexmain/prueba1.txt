@@ -1,0 +1,5 @@
+int devolver (int e2){
+	int $i2;
+	
+	i2 = 9;
+}

@@ -1,2 +1,2 @@
-java -jar ..\..\dist\Practica_PL.jar p0-0.txt > resultado.txt
+java -jar ..\..\dist\Practica_PL.jar prueba1.txt
 pause

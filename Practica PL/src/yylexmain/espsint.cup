@@ -5,6 +5,7 @@ non terminal PROGRAM, PART, TYPE, RESTPART, LISTPARAM, BLQ, SENTLIST, SENT, LID,
 
 /* Precedences */
 precedence left mul, div, rest, mas, menos;
+start with PROGRAM;
 
 PROGRAM::= PART PROGRAM | PART;
 PART::= TYPE RESTPART;

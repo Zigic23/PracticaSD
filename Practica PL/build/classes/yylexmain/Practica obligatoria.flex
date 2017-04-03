@@ -4,7 +4,15 @@ import java_cup.runtime.*;
 %class AnalizadorLexico
 %unicode
 %cup
+%eofval{
+  return new Symbol(sym.EOF);
+%eofval}
 %{
+	AnalizadorLexico(java.io.Reader in, boolean deb) {
+		this.zzReader = in;
+		this.debug = deb;
+	}
+	boolean debug = false;
 	boolean getEndOfFile(){
 		return zzAtEOF;
 	}
@@ -25,27 +33,48 @@ barrab = "//"[^\n]+
 barraa = "/*"([^*]|"*"[^/])+"*/"
 
 %%
-{ident} {return new Symbol(sym.ident, yytext());}
-{constint} {return new Symbol(sym.constint, yytext());}
-{constfloat} {return new Symbol(sym.constfloat, yytext());}
-{constlit} {return new Symbol(sym.constlit, yytext());}
-{comentario} {return new Symbol(sym.coment);}
-" - " {return new Symbol(sym.menos);}
-" + " {return new Symbol(sym.mas);}
-" * " {return new Symbol(sym.mul);}
-" / " {return new Symbol(sym.div);}
-" % " {return new Symbol(sym.rest);}
-"(" {return new Symbol(sym.para);}
-")" {return new Symbol(sym.parc);}
-";" {return new Symbol(sym.puntc);}
-"," {return new Symbol(sym.coma);}
-"=" {return new Symbol(sym.igual);}
-"{" {return new Symbol(sym.llava);}
-"}" {return new Symbol(sym.llavc);}
-"void" {return new Symbol(sym.voidd);}
-"int" {return new Symbol(sym.intt);}
-"float" {return new Symbol(sym.floatt);}
-"return" {return new Symbol(sym.returnn);}
+" - " {if (debug){System.out.println("menos");}
+		return new Symbol(sym.menos);}
+" + " {if (debug){System.out.println("mas");}
+		return new Symbol(sym.mas);}
+" * " {if (debug){System.out.println("mul");}
+		return new Symbol(sym.mul);}
+" / " {if (debug){System.out.println("div");}
+		return new Symbol(sym.div);}
+" % " {if (debug){System.out.println("rest");}
+		return new Symbol(sym.rest);}
+"(" {if (debug){System.out.println("para");}
+		return new Symbol(sym.para);}
+")" {if (debug){System.out.println("parc");}
+		return new Symbol(sym.parc);}
+";" {if (debug){System.out.println("puntc");}
+		return new Symbol(sym.puntc);}
+"," {if (debug){System.out.println("coma");}
+		return new Symbol(sym.coma);}
+"=" {if (debug){System.out.println("igual");}
+		return new Symbol(sym.igual);}
+"{" {if (debug){System.out.println("llava");}
+		return new Symbol(sym.llava);}
+"}" {if (debug){System.out.println("llavc");}
+		return new Symbol(sym.llavc);}
+"void" {if (debug){System.out.println("voidd");}
+		return new Symbol(sym.voidd);}
+"int" {if (debug){System.out.println("intt");}
+		return new Symbol(sym.intt);}
+"float" {if (debug){System.out.println("floatt");}
+		return new Symbol(sym.floatt);}
+"return" {if (debug){System.out.println("returnn");}
+		return new Symbol(sym.returnn);}
+{ident} {if(debug){System.out.println("ident");}
+		return new Symbol(sym.ident, yytext());}
+{constint} {if (debug){System.out.println("constint");}
+		return new Symbol(sym.constint, yytext());}
+{constfloat} {if (debug){System.out.println("constfloat");}
+		return new Symbol(sym.constfloat, yytext());}
+{constlit} {if (debug){System.out.println("constlit");}
+		return new Symbol(sym.constlit, yytext());}
+{comentario} {if (debug){System.out.println("coment");}
+		return new Symbol(sym.coment);}
 
 \n {System.out.print(yytext());}
 [^] {;}

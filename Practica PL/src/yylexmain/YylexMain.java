@@ -15,40 +15,28 @@ public class YylexMain {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        if (args.length == 0) {
-            System.out.println("Usage : java Yylex [ --encoding <name> ] <inputfile(s)>");
-        }
-        else {
-            int firstFilePos = 0;
-            String encodingName = "UTF-8";
-            if (args[0].equals("--encoding")) {
-                firstFilePos = 2;
-                encodingName = args[1];
+    public static void main(String argv[]){
+        if (argv.length == 0) {
+            System.out.println("Inserta nombre de archivo\n"+
+            "( Usage : java Analizador <inputfile> )");
+        } else if (argv.length == 1){
+            for (int i = 0; i < argv.length; i++) {
+                AnalizadorLexico lexico = null;
                 try {
-                    java.nio.charset.Charset.forName(encodingName); // Side-effect: is encodingName valid? 
-                } catch (Exception e) {
-                    System.out.println("Invalid encoding '" + encodingName + "'");
-                    return;
-                }
-            }
-            for (int i = firstFilePos; i < args.length; i++) {
-                AnalizadorLexico scanner = null;
-                try {
-                    java.io.FileInputStream stream = new java.io.FileInputStream(args[i]);
-                    java.io.Reader reader = new java.io.InputStreamReader(stream, encodingName);
-                    scanner = new AnalizadorLexico(reader);
-                    while ( !scanner.getEndOfFile() ) scanner.next_token();
+                    lexico = new AnalizadorLexico( new java.io.FileReader(argv[i]));
+                    parser sintactico = new parser(lexico);
+                    sintactico.parse();
                 }
                 catch (java.io.FileNotFoundException e) {
-                    System.out.println("File not found : \""+args[i]+"\"");
+                    System.out.println("Archivo \""+argv[i]+"\" no encontrado.");
                 }
                 catch (java.io.IOException e) {
-                    System.out.println("IO error scanning file \""+args[i]+"\"");
-                    System.out.println(e);
+                    System.out.println("Error durante la lectura del"
+                    + " archivo \""+argv[i]+"\".");
+                    e.printStackTrace();
                 }
                 catch (Exception e) {
-                    System.out.println("Unexpected exception:");
+                    System.out.println("Excepcion:");
                     e.printStackTrace();
                 }
             }
