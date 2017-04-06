@@ -13,7 +13,7 @@
 public class YylexMain {
 
     /**
-     * @param args the command line arguments
+     * @param argv the command line arguments
      */
     public static void main(String argv[]){
         if (argv.length == 0) {
@@ -26,6 +26,7 @@ public class YylexMain {
                     lexico = new AnalizadorLexico( new java.io.FileReader(argv[i]));
                     parser sintactico = new parser(lexico);
                     sintactico.parse();
+                    System.out.println("Entrada correcta");
                 }
                 catch (java.io.FileNotFoundException e) {
                     System.out.println("Archivo \""+argv[i]+"\" no encontrado.");

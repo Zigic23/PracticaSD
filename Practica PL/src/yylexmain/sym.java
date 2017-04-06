@@ -8,33 +8,71 @@ package yylexmain;
 /** CUP generated class containing symbol constants. */
 public class sym {
   /* terminals */
-  public static final int parc = 13;
-  public static final int para = 12;
-  public static final int constfloat = 4;
-  public static final int coma = 15;
-  public static final int floatt = 19;
-  public static final int voidd = 17;
-  public static final int llavc = 21;
-  public static final int llava = 20;
-  public static final int menos = 7;
-  public static final int intt = 18;
-  public static final int constlit = 5;
-  public static final int ident = 2;
-  public static final int rest = 11;
-  public static final int div = 10;
-  public static final int igual = 16;
+  public static final int llava = 39;
+  public static final int doo = 20;
+  public static final int mul = 28;
+  public static final int corchc = 5;
+  public static final int corcha = 4;
+  public static final int coma = 34;
+  public static final int thenn = 6;
+  public static final int igual = 35;
+  public static final int nott = 11;
+  public static final int intt = 37;
+  public static final int constfloat = 23;
+  public static final int struct = 7;
+  public static final int floatt = 38;
+  public static final int rest = 30;
+  public static final int elsee = 12;
+  public static final int untill = 21;
+  public static final int moreq = 17;
+  public static final int andd = 9;
+  public static final int voidd = 36;
+  public static final int returnn = 41;
+  public static final int menos = 26;
+  public static final int iff = 3;
   public static final int EOF = 0;
-  public static final int constint = 3;
-  public static final int returnn = 22;
-  public static final int coment = 6;
+  public static final int ident = 2;
+  public static final int parc = 32;
+  public static final int mas = 27;
+  public static final int whilee = 19;
+  public static final int para = 31;
   public static final int error = 1;
-  public static final int puntc = 14;
-  public static final int mul = 9;
-  public static final int mas = 8;
+  public static final int equals = 14;
+  public static final int forr = 18;
+  public static final int punto = 10;
+  public static final int more = 15;
+  public static final int coment = 25;
+  public static final int constint = 22;
+  public static final int orr = 8;
+  public static final int puntc = 33;
+  public static final int lesseq = 16;
+  public static final int less = 13;
+  public static final int div = 29;
+  public static final int constlit = 24;
+  public static final int llavc = 40;
   public static final String[] terminalNames = new String[] {
   "EOF",
   "error",
   "ident",
+  "iff",
+  "corcha",
+  "corchc",
+  "thenn",
+  "struct",
+  "orr",
+  "andd",
+  "punto",
+  "nott",
+  "elsee",
+  "less",
+  "equals",
+  "more",
+  "lesseq",
+  "moreq",
+  "forr",
+  "whilee",
+  "doo",
+  "untill",
   "constint",
   "constfloat",
   "constlit",

@@ -1,10 +1,35 @@
 package yylexmain;
 import java_cup.runtime.*;
-terminal ident, constint, constfloat, constlit, coment, menos, mas, mul, div, rest, para, parc, puntc, coma, igual, voidd, intt, floatt, llava, llavc, returnn;
-non terminal PROGRAM, PART, TYPE, RESTPART, LISTPARAM, BLQ, SENTLIST, SENT, LID, EXP, LEXP, OP, FACTOR;
+parser code {:
+	public void report_error(String message, Object info) {
+       	StringBuffer m = new StringBuffer("Error");
+		System.out.println("Mensaje: "+message);
+		System.out.println("info: "+info.toString());
+		if(info instanceof java_cup.runtime.Symbol) {
+			java_cup.runtime.Symbol s=((java_cup.runtime.Symbol)info);
+			/* Comprueba si el numero de línea es mayor o igual que cero */
+			if(s.left >= 0) {
+				m.append(" en linea "+(s.left+1));
+				/*Comprueba si el numero de columna es mayoro igual que cero */
+				if (s.right >= 0)
+					m.append(", y columna "+(s.right+1));
+			}
+		}
+		m.append(" : "+message);
+		System.err.println(m);
+    }
+    public void report_fatal_error(String message, Object info) {
+       	report_error(message, info);
+		System.exit(1);
+    }
+	:};
+terminal ident, iff, corcha, corchc, thenn, struct, orr, andd, punto, nott, elsee, less, equals, more, lesseq, moreq, forr, whilee, doo, untill, constint, constfloat, constlit, coment, menos, mas, mul, div, rest, para, parc, puntc, coma, igual, voidd, intt, floatt, llava, llavc, returnn;
+non terminal PROGRAM, ID, LDIM, LFIELD, PART, TYPE, RESTPART, LISTPARAM, BLQ, SENTLIST, SENT, LID, EXP, LEXP, OP, FACTOR, LCOND, OPL, OPR, COND;
 
 /* Precedences */
 precedence left mul, div, rest, mas, menos;
+precedence left andd, orr;
+precedence left error;
 start with PROGRAM;
 
 PROGRAM::= PART PROGRAM | PART;
@@ -15,9 +40,26 @@ LISTPARAM::= LISTPARAM coma TYPE ident | TYPE ident;
 TYPE::= voidd | intt | floatt;
 
 SENTLIST::= SENTLIST SENT | SENT;
-SENT::= TYPE LID puntc | ident igual EXP puntc | ident para LEXP parc puntc | returnn EXP puntc;
-LID::= ident | LID coma ident;
+SENT::= TYPE LID puntc | ID igual EXP puntc | ident para LEXP parc puntc | returnn EXP puntc | error;
+LID::= ID | LID coma ID;
 LEXP::= EXP | LEXP coma EXP;
 EXP::= EXP OP EXP | FACTOR;
 OP::= mas | menos | mul | div | rest;
-FACTOR::= ident para LEXP parc | para EXP parc | ident | constint | constfloat | constlit;
+FACTOR::= ident para LEXP parc | para EXP parc | constint | constfloat | constlit | ID;
+ID ::= ident | ident punto ident | ident LDIM | error;
+
+SENT::= iff para LCOND parc thenn BLQ elsee BLQ
+	| forr para ident igual EXP puntc LCOND puntc ident igual EXP parc BLQ 
+	| whilee para LCOND parc BLQ 
+	| doo BLQ untill para LCOND parc 
+	| BLQ;
+
+LCOND::= LCOND OPL LCOND | COND | nott COND;
+OPL::= orr | andd | error;
+COND::= EXP OPR EXP;
+OPR::= equals | less | more | moreq | lesseq | error;
+
+PART ::= struct ident llava LFIELD llavc puntc | error;
+LFIELD ::= LFIELD TYPE LID puntc  | TYPE LID puntc | error;
+
+LDIM ::= LDIM corcha constint corchc | corcha constint corchc | error;
