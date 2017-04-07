@@ -23,9 +23,10 @@ public class YylexMain {
             for (int i = 0; i < argv.length; i++) {
                 AnalizadorLexico lexico = null;
                 try {
-                    lexico = new AnalizadorLexico( new java.io.FileReader(argv[i]));
+                    lexico = new AnalizadorLexico( new java.io.FileReader(argv[i]),true);
                     parser sintactico = new parser(lexico);
                     sintactico.parse();
+                    System.out.println();
                     System.out.println("Entrada correcta");
                 }
                 catch (java.io.FileNotFoundException e) {

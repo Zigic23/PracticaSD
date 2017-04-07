@@ -1,5 +1,5 @@
 struct registro {
-	int $camp.o_a;
+	int campo_a;
 	float campo_b;
 };
 
@@ -11,10 +11,8 @@ void intercambio (int v1, int v2){
 	v2 = auxiliar;
 }
 
-float formula (float p1, int p2)
-{
+float formula (float p1, int p2){
 	float auxiliar;
-	float matriz[3][5][4];
 
 	intercambio( p1 * 10, p2);
 	while(p1 == 10.5 * p2){
@@ -31,10 +29,19 @@ float formula (float p1, int p2)
 
 void Main (int args){
 	int entero1, entero2;
-	float real1, real2;
+	float real1[10][20], real2;
 
+	for( entero1 = 1 ; entero1 < 21 ; entero1 = entero1 + 1){
+		entero2 = 1;
+		do {
+			real1[2][2] = 1.0;
+			entero2 = entero2 + 1;
+		} until (entero2 == 11)
+	}
 	printf('Esto es el programa \'principal\'...');
-	intercambio(entero2, entero1);
-	real1 = formula(real2,entero1 + registro.campo_a);
-	registro.campo_b = real1;
+	{
+		intercambio(entero2, entero1);
+		real1[1][1] = formula(real2,entero1 + registro.campo_a);	
+	}
+	registro.campo_b = real1[3][1];
 }

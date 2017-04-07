@@ -4,6 +4,8 @@ import java_cup.runtime.*;
 %class AnalizadorLexico
 %unicode
 %cup
+%column
+%line
 %eofval{
   return new Symbol(sym.EOF);
 %eofval}
@@ -17,7 +19,7 @@ import java_cup.runtime.*;
 		return zzAtEOF;
 	}
 %}
-ident = ([$]|{let})[a-zA-Z0-9$_.]+
+ident = ([$]|{let})[a-zA-Z0-9$_.]*
 let = [a-zA-Z]
 constint = ({decint}|{octint}|{hexint})
 constfloat = ({decreal}|{octreal}|{hexreal})
@@ -111,14 +113,13 @@ barraa = "/*"([^*]|"*"[^/])+"*/"
 		return new Symbol(sym.constfloat, yytext());}
 {constlit} {if (debug){System.out.print("constlit");}
 		return new Symbol(sym.constlit, yytext());}
-{comentario} {if (debug){System.out.print("coment");}
-		return new Symbol(sym.coment);}
+{comentario} {if (debug){System.out.print("coment");}}
 
 " " {if (debug){System.out.print(" ");};}
 \n {if (debug){System.out.println();}}
 \t {if (debug){System.out.print("\t");}}
 \r {if (debug){System.out.print("\r");}}
 [^" "\n\t\r] {if (debug){System.out.print("ERROR");}
-		System.out.print("Detectado un error... continuando");
+		System.out.println("Detectado un error léxico en linea: " + yyline + " y columna: " + yycolumn +"... continuando");
 		//return new Symbol(sym.error);
 		}

@@ -1,2 +1,2 @@
-java -jar ..\..\dist\Practica_PL.jar prueba3.txt
+java -jar ..\..\dist\Practica_PL.jar .\pruebas\correcta2l.c
 pause
