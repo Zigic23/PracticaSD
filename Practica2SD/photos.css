@@ -2,14 +2,27 @@
     margin: 0;
 }
 
+.title{
+    font-weight: 900;
+    text-align: center;
+        
+}
+
 .newImage{
-    margin: 1;
+    margin: 3;
 }
 
 body{
-    background-color:darkseagreen;
+    background-color:cornflowerblue;
 }
 
 .page-header{
     font-weight: 900;
+}
+
+#lienzoMapa {
+    width:800px;
+    height:600px;
+    margin: 10px auto; 
+    border: 5px solid; 
 }

@@ -4,42 +4,113 @@
     <script src="https://code.jquery.com/jquery-2.2.2.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places'></script>
+    <script src="locationpicker.jquery.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/black-tie/jquery-ui.css" />
+    <meta charset="UTF-8">
     <script src="credencialesFlickr.js"></script>
     <script src="app.js"></script>
     <link href="./photos.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
-                <h1 class="page-header">Buscador de fotos de flickr</h1>
-                <form class="form-inline" id="form">
-                    <label for="name">Nombre usuario: </label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Escriba aqui el username">
-                    <label for="aBuscar" class="aBuscar">A buscar: </label>
-                    <input type="text" class="form-control aBuscar" name="aBuscar" id="aBuscar" placeholder="Formato fecha: mm-dd-aaaa">
-                    <select class="form-control" id="type">
-                        <option value="min_taken_date" class="selected">Fecha minima de captura</option>
-                        <option value="max_taken_date">Fecha maxima de captura</option>
-                        <option value="username">Nombre de usuario</option>
-                        <option value="min_upload_date">Fecha minima de subida</option>
-                        <option value="max_upload_date">Fecha maxima de subida</option>
-                        <option value="tags">Tags</option>
-                    </select>
-                    <button type="submit" class="btn btn-primary">Buscar</button>
-                </form>
-            </div>
-        </div>
-        <div class="window row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
-                <img src="" class="window img-responsive img-rounded img-center"/>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
-                <h2>Imagenes:</h2>
-                <div id="imagenes"></div>
+
+    <div class="page-content">
+        <div id="tab-general">
+            <div class="row mbl">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+                    <div class="panel">
+                        <div class="row">
+
+                            <h1 class="title">Buscador de fotos de Flickr</h1>
+                            <form id="form">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <div class="row container-fluid">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="radioDiv">
+                                            <h3 class="subtitle">Buscar por</h3>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="buscarPor" id="pics" value="pics"> Fotos
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="buscarPor" id="vids" value="vids"> Videos
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="buscarPor" id="ambos" value="ambos"> Ambos
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <h3 class="subtitle">Seleccione condiciones para buscar y escribalas</h3>
+                                    <div class="row container-fluid">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                            <label>
+                                                <input type="checkbox" id="min_takenCheckbox">Fecha minima de captura</label>
+                                            <input type="text" id="datepicker1">
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                            <label>
+                                                <input type="checkbox" id="max_takenCheckbox">Fecha maxima de captura</label>
+                                            <input type="text" id="datepicker2">
+                                        </div>
+                                    </div>
+                                    <div class="row container-fluid">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                            <label>
+                                                <input type="checkbox" id="min_uploadCheckBox">Fecha minima de subida</label>
+                                            <input type="text" id="datepicker3">
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                            <label>
+                                                <input type="checkbox" id="max_uploadCheckbox">Fecha maxima de subida</label>
+                                            <input type="text" id="datepicker4">
+                                        </div>
+                                    </div>
+                                    <div class="row container-fluid">
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                            <label>
+                                                <input type="checkbox" id="tagsCheckbox">Tags</label>
+                                            <input type="text" name="tags" size="50" id="tagsinput" placeholder="Separa con espacios">
+                                        </div>
+                                    </div>
+                                    <div class="row container-fluid">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <label>
+                                                <input type="checkbox" id="ubicCheckbox">Ubicación (Necesitas usar otra condición)</label>
+                                            <br/>
+                                            <div id="mapa">
+                                                Ubicación:
+                                                <input type="text" id="us2-address" style="width: 200px" /> Radio:
+                                                <input type="text" id="us2-radius" /> m
+                                                <br/>
+                                                <div id="lienzoMapa"></div>
+                                                Latitud:
+                                                <input type="text" id="us2-lat" /> Longitud:
+                                                <input type="text" id="us2-lon" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <div class="row">
+                                        <button type="submit" class="btn btn-primary">Buscar</button>
+                                    </div>
+                                    <br/>
+                                </div>
+                            </form>
+
+                            <div class="window row">
+                                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+                                    <img src="" class="window img-responsive img-rounded img-center" height="auto" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+                                    <h2 class="title">Imagenes:</h2>
+                                    <div id="imagenes"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
