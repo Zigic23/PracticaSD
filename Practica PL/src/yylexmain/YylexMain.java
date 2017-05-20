@@ -6,6 +6,8 @@
 
  package yylexmain;
  
+import java.io.PrintWriter;
+
 /**
  *
  * @author Diego
@@ -25,7 +27,19 @@ public class YylexMain {
                 try {
                     lexico = new AnalizadorLexico( new java.io.FileReader(argv[i]),true);
                     parser sintactico = new parser(lexico);
-                    sintactico.parse();
+                    int barr = argv[0].lastIndexOf("\\");
+                    String arc = argv[0].substring(barr+1, argv[0].length());               
+                    String total = "<html>\n<head><style>\n" +
+                            ".cte {color:rgb(19,189,72);}\n" +
+                            ".ident {color:rgb(50,40,244);}\n" +
+                            ".palres {color:rgb(0,0,0);font-weight:bold;}\n" +
+                            "</style>\n\t<title>" + arc + "</title>\n</head>\n"
+                            + "<BODY>\n"
+                            + "\t<h1>Programa: " + arc + "</h1>";
+                    total += sintactico.parse().value.toString();
+                    PrintWriter writer = new PrintWriter(arc + ".html", "UTF-8");
+                    writer.println(total);
+                    writer.close();
                     System.out.println();
                     System.out.println("Entrada correcta");
                 }

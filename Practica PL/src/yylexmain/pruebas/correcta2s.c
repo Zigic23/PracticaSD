@@ -1,3 +1,8 @@
+struct registro {
+	int campo_a;
+	float campo_b;
+};
+
 int sumaM (int m1,int m2){ //Tomamos m1 y m2 como matrices
 	int suma;
 	suma = 0;

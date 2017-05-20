@@ -1,0 +1,66 @@
+<html>
+<head><style>
+.cte {color:rgb(19,189,72);}
+.ident {color:rgb(50,40,244);}
+.palres {color:rgb(0,0,0);font-weight:bold;}
+</style>
+	<title>EjemploSobresaliente.c</title>
+</head>
+<BODY>
+	<h1>Programa: EjemploSobresaliente.c</h1><H2> Funciones: </H2>
+<UL>
+<LI> <A HREF="#intercambio">void intercambio (<span class="palres">int</span> <span class="ident">v2</span>, <span class="palres">int</span> <span class="ident">v1</span>); </A> </LI>
+<LI> <A HREF="#formula">float formula (<span class="palres">int</span> <span class="ident">p2</span>, <span class="palres">float</span> <span class="ident">p1</span>); </A> </LI>
+<LI> <A HREF="#Main">void Main (<span class="palres">int</span> <span class="ident">args</span>); </A> </LI>
+</UL>
+ <HR/><span CLASS="palres">struct</span> <span class="ident">registro</span></BR>
+{<div style="padding-left:.5cm"><span class="palres">int</span> <span class="ident">campo_a</span>;</BR>
+<span class="palres">float</span> <span class="ident">campo_b</span>;</BR>
+</div>
+};</BR>
+</BR>
+<code>
+<A NAME="intercambio"><span class="palres">void</span> <span CLASS="ident">intercambio</span>(<span class="palres">int</span> <span class="ident">v2</span>, <span class="palres">int</span> <span class="ident">v1</span>)<BR/>{<BR/><div style="padding-left:.5cm"><span class="palres">int</span> <span class="ident">auxiliar</span>;</BR>
+<span class="ident">auxiliar</span> = <span class="ident">v1</span>;</BR>
+<span class="ident">v1</span> = <span class="ident">v2</span>;</BR>
+<span class="ident">v2</span> = <span class="ident">auxiliar</span>;</BR>
+</div>}</BR>
+</code>
+<A HREF="#intercambio">Inicio de la funcion</A> <A HREF="#inicio">Inicio del programa</A><HR/></BR>
+<code>
+<A NAME="formula"><span class="palres">float</span> <span CLASS="ident">formula</span>(<span class="palres">int</span> <span class="ident">p2</span>, <span class="palres">float</span> <span class="ident">p1</span>)<BR/>{<BR/><div style="padding-left:.5cm"><span class="palres">float</span> <span class="ident">auxiliar</span>;</BR>
+<span class="ident">intercambio</span> (<span class="ident">p1</span> * <span class="cte">10</span>, <span class="ident">p2</span>);</BR>
+<span class="palres">while</span> (<span class="ident">p1</span> == <span class="cte">10.5</span> * <span class="ident">p2</span>)</BR>
+{<BR/><div style="padding-left:.5cm"><span class="palres">if</span> (<span class="ident">auxiliar</span> < <span class="cte">10.5</span> and <span class="ident">auxiliar</span> >= <span class="cte">8.6</span> or not <span class="ident">auxiliar</span> == <span class="cte">9</span>) <span class="palres">then</span></BR>
+{<BR/><div style="padding-left:.5cm"><span class="ident">auxiliar</span> = <span class="ident">auxiliar</span> + <span class="cte">-3</span> + <span class="ident">p2</span> % <span class="cte">045</span> * <span class="cte">0-3</span> / <span class="cte">0+67</span>;</BR>
+<span class="ident">auxiliar</span> = <span class="ident">auxiliar</span> - (<span class="cte">+98</span> - <span class="ident">p1</span> * <span class="cte">0x+ABD</span> % <span class="cte">0xFC4D</span>);</BR>
+</div>}</BR>
+<span class="palres">else</span></BR>
+{<BR/><div style="padding-left:.5cm"><span class="ident">auxiliar</span> = <span class="cte">-3.98</span> + <span class="ident">p2</span> % <span class="cte">045.27</span> * <span class="cte">0-3.11</span> / <span class="cte">0+67.34</span>;</BR>
+</div>}</BR>
+<span class="ident">auxiliar</span> = <span class="ident">auxiliar</span> - (<span class="cte">+98.5</span> - <span class="ident">p1</span> * <span class="cte">0x+ABD.EE</span> % <span class="cte">0xFC4D.F4</span>);</BR>
+</div>}</BR>
+<span class="palres">return</span> <span class="ident">auxiliar</span> * <span class="cte">0x-FF</span>;</div>}</BR>
+</code>
+<A HREF="#formula">Inicio de la funcion</A> <A HREF="#inicio">Inicio del programa</A><HR/></BR>
+<code>
+<A NAME="Main"><span class="palres">void</span> <span CLASS="ident">Main</span>(<span class="palres">int</span> <span class="ident">args</span>)<BR/>{<BR/><div style="padding-left:.5cm"><span class="palres">int</span> <span class="ident">entero1</span>, <span class="ident">entero2</span>;</BR>
+<span class="palres">float</span> <span class="ident">real1</span>[<span class="cte">10</span>][<span class="cte">20</span>], <span class="ident">real2</span>;</BR>
+<span class="palres">for</span> (<span class="ident">entero1</span> = <span class="cte">1</span>; <span class="ident">entero1</span> < <span class="cte">21</span>; <span class="ident">entero1</span> = <span class="ident">entero1</span> + <span class="cte">1</span>)</BR>
+{<BR/><div style="padding-left:.5cm"><span class="ident">entero2</span> = <span class="cte">1</span>;</BR>
+<span class="palres">do</span></BR>
+{<BR/><div style="padding-left:.5cm"><span class="ident">real1</span>[<span class="cte">2</span>][<span class="cte">2</span>] = <span class="cte">1.0</span>;</BR>
+<span class="ident">entero2</span> = <span class="ident">entero2</span> + <span class="cte">1</span>;</BR>
+</div>}</BR>
+until (<span class="ident">entero2</span> == <span class="cte">11</span>)</BR>
+</div>}</BR>
+<span class="ident">printf</span> (<span class="cte">'Esto es el programa \'principal\'...'</span>);</BR>
+{<BR/><div style="padding-left:.5cm"><span class="ident">intercambio</span> (<span class="ident">entero2</span>, <span class="ident">entero1</span>);</BR>
+<span class="ident">real1</span>[<span class="cte">1</span>][<span class="cte">1</span>] = <span class="ident">formula</span> (<span class="ident">real2</span>, <span class="ident">entero1</span> + <span class="ident">registro.campo_a</span>);</BR>
+</div>}</BR>
+<span class="ident">registro.campo_b</span> = <span class="ident">real1</span>[<span class="cte">3</span>][<span class="cte">1</span>];</BR>
+</div>}</BR>
+</code>
+<A HREF="#Main">Inicio de la funcion</A> <A HREF="#inicio">Inicio del programa</A><HR/></BR>
+</BR>
+</body></html>
